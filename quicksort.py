@@ -17,12 +17,15 @@ def partition(arr, left_index):
         quick_sort(right_part)
 
 def quick_sort(arr):
-    last_index = len(arr) - 1
-    
-    pivot = arr[last_index]
+    if len(arr) <= 1:
+        return arr
 
-    left_index = -1
-    right_index = 0
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+
+    return quick_sort(left) + middle + quick_sort(right)
 
     while left_index < right_index:
         # Cari elemen dari kiri yang lebih besar dari pivot
