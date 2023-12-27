@@ -1,4 +1,4 @@
-import random  # Tambahkan baris ini untuk mengimport modul random
+import random  
 
 def quick_sort(arr, low, high):
     if low < high:
